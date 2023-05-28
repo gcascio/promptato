@@ -7,14 +7,7 @@
 ## Intro
 Sometimes you just want to map some user input to a prompt and present the result be it to share some magic with your friends and family or simply because you feel like a prompt potato.
 
-
-![](assets/short_demo.mp4)
-
-
-![](https://github.com/gcascio/promptato/blob/main/assets/short_demo.mp4)
-
-
-https://github.com/gcascio/promptato/blob/main/assets/short_demo.mp4
+https://github.com/gcascio/promptato/assets/35739042/896020e8-0cad-4b4f-a76b-eaa9f9993c77
 
 
 ### Technologies used
