@@ -7,12 +7,15 @@
 ## Intro
 Sometimes you just want to map some user input to a prompt and present the result be it to share some magic with your friends and family or simply because you feel like a prompt potato.
 
-<p align="center">
-  <video width="100%" controls>
-    <source src="https://github.com/gcascio/promptato/blob/main/assets/demo.mp4" type="video/mp4">
-    Your browser does not support HTML video.
-  </video>
-</p>
+
+![](assets/short_demo.mp4)
+
+
+![](https://github.com/gcascio/promptato/blob/main/assets/short_demo.mp4)
+
+
+https://github.com/gcascio/promptato/blob/main/assets/short_demo.mp4
+
 
 ### Technologies used
 
@@ -20,7 +23,7 @@ Sometimes you just want to map some user input to a prompt and present the resul
 - [Tailwind CSS](https://tailwindcss.com/)
 - [OpenAI API](https://platform.openai.com/docs/introduction)
 
-:clapper: Examples
+## :clapper: Examples
 
 Have a look at the examples in `/app/examples` to get some inspiration about what is possible:
 
