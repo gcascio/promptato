@@ -1,0 +1,43 @@
+{
+  "editor.tabSize": 2,
+  "eslint.workingDirectories": [
+    "./packages/*/"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
+  "colorize.languages": [
+    "javascriptreact",
+    "typescriptreact",
+    "typescript",
+    "javascript",
+    "css",
+    "scss",
+    "svg"
+  ]
+}
