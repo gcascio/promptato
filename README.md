@@ -32,9 +32,9 @@ There is no package yet so this repo acts as template. Simply fork or clone it t
 
 ```sh
 # ssh
-git clone
+git clone git@github.com:gcascio/promptato.git
 # https
-git clone 
+git clone https://github.com/gcascio/promptato.git
 ```
 
 To start the application run
@@ -100,17 +100,26 @@ export default Page;
 
 ## :monocle_face: API
 
-The API of promptato is simple and straightforward and self explanatory with the hep of the typings.
+The API of promptato is straightforward and self explanatory with the hep of the typings.
 As shown in the example above `createPromptato` expects two arguments, the input definition and the prompt definition. All input values can be accessed in the prompt definition.
 
 Each input of the input definition has the following properties:
 
-| Property                                       | Required                       | Description                          |
-| ---------------------------------------------- | ------------------------------ | ------------------------------------ |
-| `component: 'input' \| 'select' \| 'textarea'` | Yes                            | The component type                   |
-| `label: string`                                | Yes                            | Label describing the input           |
-| `initialValue: string \| number`               | No                             | Initial value of the input component |
-| `options: string[]`                            | Yes (for `'select'` component) | Options of select element            |
+| Property                                       | Required                            | Description                          |
+| ---------------------------------------------- | ----------------------------------- | ------------------------------------ |
+| `component: 'input' \| 'select' \| 'textarea'` | Yes                                 | The component type                   |
+| `label: string`                                | Yes                                 | Label describing the input           |
+| `initialValue: string \| number`               | No                                  | Initial value of the input component |
+| `type: string \| number`                       | No (only for `'input'` component)   | Options of select element            |
+| `options: string[]`                            | Yes (only for `'select'` component) | Options of select element            |
+
+A message in the prompt definition has following properties:
+
+| Property                                  | Required | Description                                                                                                           |
+| ----------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| `role: 'assistant' \| 'system' \| 'user'` | Yes      | The [role](https://platform.openai.com/docs/api-reference/chat/create#chat/create-role) of the author of this message |
+| `content: string \| (inputs) => string`   | Yes      | The contents of the message.                                                                                          |
+| `name: string`                            | No       | The name of the author of this message                                                                                |
 
 ## :hammer_and_wrench: Contributing
 
@@ -127,5 +136,5 @@ To fix a bug or add a feature, follow these steps:
 
 ## :raising_hand: FAQ
 
-### Why Promptato
+### Why Promptato?
 It is a reference to the famous "Couch Potato" cliche.
