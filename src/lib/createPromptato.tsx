@@ -1,4 +1,4 @@
-import type { ChatCompletionRequestMessage } from 'openai';
+import type { OpenAI } from 'openai';
 
 import { useCallback, useState } from 'react';
 import ReactMarkdown from 'react-markdown'
@@ -8,7 +8,8 @@ import type { InputComponent, SelectComponent, TextAreaComponent } from '@/compo
 
 type ComponentSchema = Record<string, InputComponent | SelectComponent | TextAreaComponent>;
 
-type Message<T extends ComponentSchema> = Omit<ChatCompletionRequestMessage, 'content'> & { content: string | ((input: ToKV<T>) => string)}
+type Message<T extends ComponentSchema> = Omit<OpenAI.Chat.Completions.ChatCompletionMessageParam, 'content'> &
+  { content: string | ((input: ToKV<T>) => string)}
 
 // Currently only the input types string and number are supported
 type ToKV<T extends ComponentSchema> = {

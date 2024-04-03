@@ -1,14 +1,10 @@
 import { NextResponse } from 'next/server';
-import { Configuration, OpenAIApi } from 'openai';
+import { OpenAI } from 'openai';
 import { z } from "zod";
 
-import type { ChatCompletionRequestMessage } from 'openai';
-
-const openai = new OpenAIApi(
-  new Configuration({
-    apiKey: process.env.OPEN_AI_API_KEY,
-  })
-);
+const openai = new OpenAI({
+  apiKey: process.env.OPEN_AI_API_KEY,
+});
 
 const MessageSchema = z.array(z.object({
   role: z.enum(['system', 'user', 'assistant']),
@@ -27,10 +23,10 @@ export async function POST(req: Request) {
     return new NextResponse('Malformed messages', { status: 400 });
   }
 
-  const messages = body.messages as ChatCompletionRequestMessage[];
+  const messages = body.messages;
 
   try {
-    const completion = await openai.createChatCompletion({
+    const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages,
       max_tokens: 500,
@@ -39,7 +35,7 @@ export async function POST(req: Request) {
 
     console.log(completion);
 
-    const completionContent = completion?.data.choices[0].message?.content?.trim()
+    const completionContent = completion.choices?.[0]?.message.content?.trim()
 
     console.log(completionContent);
 
